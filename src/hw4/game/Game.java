@@ -3,7 +3,13 @@ package hw4.game;
 import hw4.maze.Grid;
 
 public class Game {
+	
 	private Grid grid;
+	
+	// need a play function
+	// i think it takes two params, the movement direction and the player
+	// so example would be play(Movement.UP, player) changes row to row before it if Cell["up"] is aperture
+	// and then left would change the cell number to the left
 	
 	
 	/**
