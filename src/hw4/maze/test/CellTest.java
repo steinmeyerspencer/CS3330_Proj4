@@ -81,6 +81,7 @@ class CellTest {
 				CellComponents.WALL);
 		cell.setUp(null);
 		assertEquals(CellComponents.WALL, cell.getUp());
+		
 	}
 	
 	@Test
