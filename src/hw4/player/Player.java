@@ -49,6 +49,9 @@ public class Player {
 		this.currentRow = currentRow;
 	}
 
+	/**
+	 * simple toString()
+	 */
 	@Override
 	public String toString() {
 		return "Player [currentCell=" + currentCell + ", currentRow=" + currentRow + "]";
