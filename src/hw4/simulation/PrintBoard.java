@@ -13,9 +13,12 @@ public class PrintBoard {
 	 * @param grid
 	 * @param player
 	 */
-	public void printBoard(Grid grid, Player player) {
+	public void printBoard(Grid grid, ArrayList<Integer> playerLocation) {
 		
 		ArrayList<ArrayList<String>> gridToPrint = new ArrayList<ArrayList<String>>();
+		
+		int playerRow = playerLocation.get(0);
+		int playerCol = playerLocation.get(1);
 		
 		/**
 		 * just printing out the grid in a readable way
@@ -28,9 +31,13 @@ public class PrintBoard {
 		    ArrayList<String> row = new ArrayList<String>();
 		    for (int j = 0; j < grid.getRows().get(i).getCells().size(); j++) {
 		        CellComponents left = grid.getRows().get(i).getCells().get(j).getLeft();
-		        if (left == CellComponents.EXIT) {
+		        if (i == playerRow && j == playerCol) {
+		        	row.add("A");
+		        }
+		        else if (left == CellComponents.EXIT) {
 		            row.add("E");
-		        } else {
+		        } 
+		        else {
 		            row.add("S"); 
 		        }
 		    }
@@ -41,6 +48,10 @@ public class PrintBoard {
 		for (int i = 0; i < gridToPrint.size(); i++) {
 			System.out.println(gridToPrint.get(i));
 		}
+	}
+
+	public PrintBoard() {
+		
 	}
 	
 }

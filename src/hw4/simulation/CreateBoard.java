@@ -22,7 +22,7 @@ public class CreateBoard {
 		Cell cell01 = new Cell(CellComponents.APERTURE, CellComponents.WALL,
 				CellComponents.WALL, CellComponents.APERTURE);
 		
-		Cell cell02 = new Cell(CellComponents.WALL, CellComponents.WALL,
+		Cell cell02 = new Cell(CellComponents.APERTURE, CellComponents.WALL,
 				CellComponents.WALL, CellComponents.APERTURE);
 		
 		Cell cell10 = new Cell(CellComponents.WALL, CellComponents.WALL,
@@ -40,7 +40,7 @@ public class CreateBoard {
 		Cell cell21 = new Cell(CellComponents.WALL, CellComponents.WALL,
 				CellComponents.APERTURE, CellComponents.WALL);
 		
-		Cell cell22 = new Cell(CellComponents.WALL, CellComponents.WALL,
+		Cell cell22 = new Cell(CellComponents.APERTURE, CellComponents.WALL,
 				CellComponents.APERTURE, CellComponents.WALL);
 		
 		

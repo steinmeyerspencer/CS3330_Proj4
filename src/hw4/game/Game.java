@@ -96,15 +96,14 @@ public class Game {
 		
 		// LEFT
 		if (direction == Movement.LEFT) {
-            Cell current = grid.getRows().get(playerRow).getCells().get(playerColumn);
-            
+            Cell current = grid.getRows().get(playerRow).getCells().get(playerColumn);            
 			// if the cell is already right next to the exit, no need to move at all, the game is over
 			if (current.getLeft() == CellComponents.EXIT) {
             	System.out.println("You won the game.");
             	return true;
             }
 			// if player is not already in left most column and not next to the exit
-	        if (playerColumn > 0) {
+			else if (playerColumn > 0) {
 	            Cell left = grid.getRows().get(playerRow).getCells().get(playerColumn - 1);
 	            if (current.getLeft() == CellComponents.APERTURE) {
 	            	// set cell to one on the left
