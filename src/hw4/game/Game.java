@@ -13,6 +13,12 @@ public class Game {
 	
 	private Grid grid;
 	
+	/**
+	 * takes a Grid and a Player and returns an Integer array with coordinates (i,j)
+	 * @param grid
+	 * @param player
+	 * @return
+	 */
 	public ArrayList<Integer> findPlayerLocation(Grid grid, Player player){
 		
 		// will find the player's position on the grid by looping through the whole grid 
@@ -39,6 +45,16 @@ public class Game {
 		return indices;
 	}
 	
+	
+	/**
+	 * takes a direction (Movement enum) and a Player and sends the player in that direction
+	 * if the player or direction or grid is null, will not run and will return false
+	 * finds player location, checks if movement will keep the player on the board
+	 * if moving left through the exit, also handles that functionality
+	 * @param direction
+	 * @param player
+	 * @return
+	 */
 	public boolean play(Movement direction, Player player) {
 		
 		if (player == null || direction == null || grid == null) {
@@ -163,6 +179,9 @@ public class Game {
 	}
 
 
+	/**
+	 * regular toString
+	 */
 	@Override
 	public String toString() {
 		return "Game [grid=" + grid + "]";
