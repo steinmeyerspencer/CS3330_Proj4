@@ -1,6 +1,7 @@
 package hw4.game;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import hw4.maze.Cell;
 import hw4.maze.CellComponents;
@@ -143,6 +144,7 @@ public class Game {
 	public Game(Grid grid) {
 		this.grid = grid;
 	}
+
 
 	/**
 	 * returns grid

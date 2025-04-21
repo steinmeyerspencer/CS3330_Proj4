@@ -4,6 +4,7 @@ import hw4.maze.Cell;
 import hw4.maze.Row;
 
 public class Player {
+	
 	private Cell currentCell;
 	private Row currentRow;
 	
