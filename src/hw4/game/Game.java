@@ -163,6 +163,11 @@ public class Game {
 	 * @return
 	 */
 	public Grid createRandomGrid(Integer upperBound) {
+		
+		if (upperBound < 3 || upperBound > 7) {
+			return null;
+		}
+		
 		Random rand = new Random();
 			
 		int numRows = rand.nextInt(upperBound - 2) + 3;
