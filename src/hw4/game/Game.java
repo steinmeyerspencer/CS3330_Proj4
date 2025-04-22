@@ -159,19 +159,19 @@ public class Game {
 	/**
 	 * Dane
 	 * made createRandomGrid method 
-	 * @param upperBound
+	 * @param size
 	 * @return
 	 */
-	public Grid createRandomGrid(Integer upperBound) {
+	public Grid createRandomGrid(Integer size) {
 		
-		if (upperBound < 3 || upperBound > 7) {
+		if (size < 3 || size > 7) {
 			return null;
 		}
 		
 		Random rand = new Random();
 			
-		int numRows = rand.nextInt(upperBound - 2) + 3;
-		int numCols = rand.nextInt(upperBound - 2) + 3;
+		int numRows = size;
+		int numCols = size;
 			
 		int exitRow = rand.nextInt(numRows);
 			

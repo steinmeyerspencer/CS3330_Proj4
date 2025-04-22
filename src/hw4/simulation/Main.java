@@ -19,7 +19,7 @@ public class Main {
 		 * create random Grid by creating a game
 		 */
 		// start up game
-		Game game = new Game(7);
+		Game game = new Game(4);
 		Grid grid = game.getGrid();
 
 		// starting player in spot 3,3 (bottom left)
