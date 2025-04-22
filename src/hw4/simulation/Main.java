@@ -14,15 +14,18 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		// create the three by three board
-		CreateBoard creator = new CreateBoard();
-		Grid grid = creator.createBoardThreeByThree();
+		/**
+		 * Dane
+		 * create random Grid by creating a game
+		 */
+		// start up game
+		Game game = new Game(7);
+		Grid grid = game.getGrid();
 
 		// starting player in spot 3,3 (bottom left)
 		Player player = new Player(grid.getRows().get(2), grid.getRows().get(2).getCells().get(2));
 		
-		// start up game
-		Game game = new Game(grid);
+		
 		
 		// set up printer
 		PrintBoard printer = new PrintBoard();

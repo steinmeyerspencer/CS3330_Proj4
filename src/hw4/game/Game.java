@@ -6,6 +6,7 @@ import java.util.Random;
 import hw4.maze.Cell;
 import hw4.maze.CellComponents;
 import hw4.maze.Grid;
+import hw4.maze.Row;
 import hw4.player.Movement;
 import hw4.player.Player;
 
@@ -153,12 +154,77 @@ public class Game {
 	}
 	
 	
+	
+	
+	/**
+	 * Dane
+	 * made createRandomGrid method 
+	 * @param upperBound
+	 * @return
+	 */
+	public Grid createRandomGrid(Integer upperBound) {
+		Random rand = new Random();
+			
+		int numRows = rand.nextInt(upperBound - 2) + 3;
+		int numCols = rand.nextInt(upperBound - 2) + 3;
+			
+		int exitRow = rand.nextInt(numRows);
+			
+		ArrayList<Row> rows = new ArrayList<>();
+			
+		for (int row = 0; row < numRows; row++) {
+			ArrayList<Cell> cells = new ArrayList<>();
+
+	        for (int col = 0; col < numCols; col++) {
+	        	CellComponents left, right, up, down;
+
+	            // left side
+	            if (col == 0) {
+	            	if (row == exitRow) {
+	            		left = CellComponents.EXIT;
+	                } else {
+	                    left = CellComponents.WALL;
+	                }
+	            } else {
+	                left = CellComponents.APERTURE;
+	            }
+
+	            // right side
+	            right = (col == numCols - 1) ? CellComponents.WALL : CellComponents.APERTURE;
+
+	            // top side
+	            up = (row == 0) ? CellComponents.WALL : CellComponents.APERTURE;
+
+	            // bottom side
+	            down = (row == numRows - 1) ? CellComponents.WALL : CellComponents.APERTURE;
+
+	            Cell cell = new Cell(left, right, up, down);
+	            cells.add(cell);
+	        }
+
+	        rows.add(new Row(cells));
+	    }
+
+	    return new Grid(rows);
+	}
+	
+	
 	/**
 	 * parameterized constructor, takes Grid object
 	 * @param grid
 	 */
 	public Game(Grid grid) {
 		this.grid = grid;
+	}
+	
+	
+	/**
+	 * Dane
+	 * parameterized constructor, takes an integer that passes to createRandomGrid method
+	 * @param upperBound
+	 */
+	public Game(Integer upperBound) {
+		this.grid = createRandomGrid(upperBound);
 	}
 
 
